@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  pygame:
+    image: pallini/pygame
+    container_name: pygame
+    build:
+      context: .
+    restart: always
+    volumes:
+      - type: bind
+        source: ./app
+        target: /tmp/app
+    tty: true
+    #command: ["python3", "server.py"]
